@@ -8,6 +8,8 @@ import { SearchComponent } from './search/search.component';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormatTimePipe } from './pipe/timerPipe.pipe';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormatTimePipe } from './pipe/timerPipe.pipe';
     AppRoutingModule,
     AppMaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
