@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8">
+            <h4 style="color: #1da1f2;">Search @ Twitter</h4>
+        </div>
+        <div class="col-sm-4">
+            <h5 style="color: #1da1f2; text-align: right;">Auto refresh in <span id="time" class=""> 0 second</span>
+            </h5>
+        </div>
+    </div>
+
+    <hr style="color: #1da1f2;">
+
+    <div class="row">
+        <div class="col-sm-12" style="text-align: center;">
+            <input type="text" style="width: 50%; line-height: 28px;"  class="full-width" placeholder="Search"
+                [(ngModel)]="searchText" (keyup.enter)="searchValue(searchInput.value)"  #searchInput>
+            <button class="btn btn-primary" style="margin-left: 9px; background-color: #1da1f2;" type="button"
+                 (click)="searchValue(searchInput.value)">
+                Search
+            </button>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-12 pt-1">
+            <div class="" style="    border-radius: 4px;
+            box-shadow: 0px 1px 3px 0px;
+            border: 1px solid #f4f4f4;
+            padding: 15px;
+            margin-bottom: 10px;" *ngFor="let item of searchResult">
+                <img src="{{item.user.profile_image_url}}" style="max-width: 100px;
+                max-height: 100px;
+                height: auto;
+                float: left;">
+                <div style="margin-left: 60px;">
+                    <span class="search-txt-header" style="font-size: 11px;
+                        color: #657786;"> {{item?.quoted_status?.user?.name}}
+                        @{{item?.quoted_status?.user?.screen_name}} {{item?.quoted_status?.created_at}}</span>
+                    <div>
+                        <span class="search-txt-header"> {{item?.user?.name}} @{{item?.user?.screen_name}}:
+                            {{item?.text}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
